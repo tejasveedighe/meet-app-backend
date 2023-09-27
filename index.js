@@ -27,6 +27,7 @@ app.post("/get-token", (req, res) => {
 	const permissions = [];
 
 	if (req.body.mod) {
+		// `ask_join` || `allow_mod`
 		permissions.push("allow_join");
 		permissions.push("allow_mod");
 	} else {
@@ -35,7 +36,7 @@ app.post("/get-token", (req, res) => {
 
 	const payload = {
 		apikey: API_KEY,
-		permissions: permissions, // `ask_join` || `allow_mod`
+		permissions: permissions,
 		version: 2,
 		roles: ["CRAWLER"],
 	};
